@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual env
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+.env
+
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# Local DB
+*.db
+*.sqlite
+*.sqlite3
+
+# Alembic cache
+alembic.ini~
