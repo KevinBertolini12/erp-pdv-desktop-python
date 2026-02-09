@@ -29,3 +29,28 @@ Thumbs.db
 
 # Alembic cache
 alembic.ini~
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+
+# venv
+.venv/
+venv/
+
+# Env
+.env
+.env.*
+
+# DB / logs
+*.db
+*.sqlite
+*.sqlite3
+logs/
+*.log
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
