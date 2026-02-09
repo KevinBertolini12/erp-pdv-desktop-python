@@ -86,8 +86,6 @@ python -m app.main
 alembic upgrade head
 
 
-
-
 🗺️ Roadmap (Próximos Passos)
 💰 Preço de venda e custo por produto
 
@@ -107,7 +105,11 @@ alembic upgrade head
 Este projeto não contém dados reais, senhas ou informações sensíveis.
 Ideal para estudos, testes e evolução contínua.
 
-🇺🇸 English Version
+
+
+
+
+*🇺🇸 English Version*
 ERP / POS Desktop in Python
 A desktop ERP / POS system built with Python, focused on product management, stock control, sales (point of sale), reports, and management dashboard.
 
@@ -176,8 +178,6 @@ Base structure for financial reports
 Supplier registration and listing
 
 Structure ready for product linkage
-
-
 
 
 
