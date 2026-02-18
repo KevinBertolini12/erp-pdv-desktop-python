@@ -1,0 +1,78 @@
+/* Janela Principal */
+QMainWindow {
+    background-color: #f5f6fa;
+}
+
+/* Tabelas (Onde o lojista passa mais tempo) */
+QTableWidget {
+    background-color: white;
+    alternate-background-color: #f1f2f6;
+    selection-background-color: #3498db;
+    selection-color: white;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    gridline-color: #ecf0f1;
+}
+
+QHeaderView::section {
+    background-color: #2f3640;
+    color: white;
+    padding: 6px;
+    border: none;
+    font-weight: bold;
+}
+
+/* Botões - O segredo da cara de "caro" */
+QPushButton {
+    background-color: #dcdde1;
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-weight: bold;
+    border: 1px solid #bdc3c7;
+}
+
+QPushButton:hover {
+    background-color: #bdc3c7;
+}
+
+/* Botão de Destaque (Verde Bertolini para 'Novo' e 'Salvar') */
+QPushButton#btn_success {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+}
+
+QPushButton#btn_success:hover {
+    background-color: #2ecc71;
+}
+
+/* Campos de Texto */
+QLineEdit {
+    padding: 8px;
+    border: 2px solid #dcdde1;
+    border-radius: 6px;
+    background: white;
+}
+
+QLineEdit:focus {
+    border: 2px solid #3498db;
+}
+
+/* Cards do Dashboard */
+QFrame#Card {
+    background-color: white;
+    border: 1px solid #dcdde1;
+    border-radius: 12px;
+}
+
+QLabel#CardTitle {
+    color: #7f8c8d;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QLabel#CardValue {
+    color: #2c3e50;
+    font-size: 20px;
+    font-weight: bold;
+}

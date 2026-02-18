@@ -1,22 +1,26 @@
-import asyncio
+import os
 from logging.config import fileConfig
 
 from alembic import context
 from sqlalchemy import pool
+from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import create_async_engine
 
 from app.core.config import settings
-from app.db.models import Base  # noqa: F401  (imports models to register metadata)
+from app.db.models import Base  # importa metadata + models
 
 config = context.config
 
+# logging
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 target_metadata = Base.metadata
 
+
 def get_url() -> str:
     return settings.db_url
+
 
 def run_migrations_offline() -> None:
     url = get_url()
@@ -31,15 +35,16 @@ def run_migrations_offline() -> None:
     with context.begin_transaction():
         context.run_migrations()
 
-def do_run_migrations(connection) -> None:
+
+def do_run_migrations(connection: Connection) -> None:
     context.configure(
         connection=connection,
         target_metadata=target_metadata,
         compare_type=True,
     )
-
     with context.begin_transaction():
         context.run_migrations()
+
 
 async def run_migrations_online() -> None:
     connectable = create_async_engine(
@@ -52,8 +57,11 @@ async def run_migrations_online() -> None:
 
     await connectable.dispose()
 
+
 def run_migrations_online_sync_entry() -> None:
+    import asyncio
     asyncio.run(run_migrations_online())
+
 
 if context.is_offline_mode():
     run_migrations_offline()

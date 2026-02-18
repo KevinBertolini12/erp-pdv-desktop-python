@@ -48,3 +48,11 @@ async def create_sale(payload: SaleCreate, db: AsyncSession = Depends(db_session
 
     await db.commit()
     return {"id": sale.id}
+
+# --- NOVO ENDPOINT: LISTAGEM DE VENDAS ---
+# Isso resolve o erro 405 Method Not Allowed
+@router.get("")
+async def list_sales(db: AsyncSession = Depends(db_session)):
+    """Retorna o histórico de todas as vendas"""
+    result = await db.execute(select(Sale).order_by(Sale.created_at.desc()))
+    return result.scalars().all()
